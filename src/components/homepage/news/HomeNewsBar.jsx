@@ -11,7 +11,7 @@ const HomeNewsBar = ({ news }) => {
 
             <div className="bg-gray-100 h-17 font-normal px-5 text-[16px] flex justify-between">
                 <div className="flex items-center gap-3">
-                    <Image className="rounded-full" src={news.author?.img} alt={news.author?.name || "/default-avatar.png"} width={40} height={40}></Image>
+                    <Image className="rounded-full" src={news.author?.img} alt={news.author?.name || "/default-avatar.png"} width={40} height={40} loading="lazy"></Image>
                     <div className="">
                         <h3>{news.author?.name}</h3>
                         <p>{news.author?.published_date}</p>
@@ -25,7 +25,7 @@ const HomeNewsBar = ({ news }) => {
             </div>
             <h1 className="my-5">{news.title}</h1>
             <figure>
-                <Image src={news?.thumbnail_url} alt={news.title} width={300} height={300} className="w-full h-100 object-cover object-[center_20%] rounded-3xl p-5"></Image>
+                <Image src={news?.thumbnail_url} alt={news.title} width={300} height={300} className="w-full h-100 object-cover object-[center_20%] rounded-3xl p-5" loading="lazy"></Image>
             </figure>
 
             <div className="card-body">

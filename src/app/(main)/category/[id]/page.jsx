@@ -26,7 +26,7 @@ const NewsCategoryPage = async ({ params }) => {
 
                 {/* middle */}
                 <div className="text-xl font-bold col-span-6">
-                    Dragon News
+                   
                     <div className="space-y-4 mt-5">
                         {
                             news.length > 0 ? news.map((n,index) => {

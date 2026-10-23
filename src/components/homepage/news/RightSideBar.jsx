@@ -5,6 +5,7 @@ import insImg from "../../../assets/instagram.png"
 import swiImg from "../../../assets/swimming.png"
 import claImg from "../../../assets/class.png"
 import plImg from "../../../assets/playground.png"
+import bg from "../../../assets/bg.png"
 import Image from "next/image";
 
 const RightSideBar = () => {
@@ -36,6 +37,7 @@ const RightSideBar = () => {
                 <Image src={claImg} alt="Class Image" className="w-full" />
                 <Image src={plImg} alt="Playground Image" className="w-full" />
             </div>
+            <Image className="mt-5" src={bg} alt="bg"></Image>
         </div>
     );
 };
