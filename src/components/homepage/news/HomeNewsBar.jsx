@@ -1,15 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaEye, FaStar } from "react-icons/fa";
 
 const HomeNewsBar = ({ news }) => {
-    console.log(news);
+    // console.log(news);
+
     return (
         <div className="card bg-base-100 shadow-sm">
 
             <div className="bg-gray-100 h-17 font-normal px-5 text-[16px] flex justify-between">
                 <div className="flex items-center gap-3">
-                    <Image className="rounded-full" src={news.author?.img} alt={news.author?.name} width={40} height={40}></Image>
+                    <Image className="rounded-full" src={news.author?.img} alt={news.author?.name || "/default-avatar.png"} width={40} height={40}></Image>
                     <div className="">
                         <h3>{news.author?.name}</h3>
                         <p>{news.author?.published_date}</p>
@@ -29,7 +31,9 @@ const HomeNewsBar = ({ news }) => {
             <div className="card-body">
                 <p className="font-normal text-l text-gray-500 line-clamp-3">{news.details}</p>
                 <div className="card-actions justify-start">
-                    <button className="border-none text-[#FF8C47]">Read More</button>
+                    <Link href={`/news/${news._id}`}>
+                        <button className="border-none hover:text-red-500 cursor-pointer text-[#FF8C47]">Read More</button>
+                    </Link>
                 </div>
                 <hr className="text-gray-300 my-3" />
                 <div className="flex justify-between">
