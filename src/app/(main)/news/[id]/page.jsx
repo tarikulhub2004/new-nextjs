@@ -12,7 +12,7 @@ const NewsDetailsPage = async ({ params }) => {
     // console.log(news);
     return (
         <div className="container mx-auto">
-            <div className="w-3/5 mx-auto">
+            <div className="lg:w-3/5 mx-auto">
                 <h1 className="text-xl mb-3 font-bold"> Dragon News</h1>
                 <div className="card bg-base-100 shadow-sm">
                     <figure>
