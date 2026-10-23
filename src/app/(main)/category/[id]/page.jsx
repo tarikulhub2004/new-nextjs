@@ -1,3 +1,4 @@
+import HomeNewsBar from '@/components/homepage/news/HomeNewsBar';
 import LeftSideBar from '@/components/homepage/news/LeftSideBar';
 import RightSideBar from '@/components/homepage/news/RightSideBar';
 import { getCategories, getNewsByCategoryId } from '@/lib/data/data';
@@ -28,10 +29,9 @@ const NewsCategoryPage = async ({ params }) => {
                     Dragon News
                     <div className="space-y-4 mt-5">
                         {
-                            news.length > 0 ? news.map(n => {
-                                return <div className="p-6 rounded-md border" key={n._id}>
-                                    {n.title}
-                                </div>
+                            news.length > 0 ? news.map((n,index) => {
+                                return <HomeNewsBar key={index} news={n}>
+                                </HomeNewsBar>
                             }) : <h1 className='text-center'>No News Found</h1>
                         }
                     </div>
