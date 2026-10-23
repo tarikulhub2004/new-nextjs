@@ -4,6 +4,18 @@ import Link from "next/link";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaArrowLeft, FaEye, FaStar } from "react-icons/fa";
 
+export const generateMetadata = async ({ params }) => {
+    const { id } = await params;
+    // console.log("params", params);
+    const news = await getNewsDetails(id);
+    // console.log(id, "id");
+
+    return {
+        title: news.title,
+        description: news.description
+    }
+}
+
 const NewsDetailsPage = async ({ params }) => {
     const { id } = await params;
     // console.log(id, "params id")
@@ -13,7 +25,7 @@ const NewsDetailsPage = async ({ params }) => {
     return (
         <div className="container mx-auto">
             <div className="lg:w-3/5 mx-auto">
-                <h1 className="text-xl mb-3 font-bold"> Dragon News</h1>
+                <h1 className="text-xl mb-3 font-bold">News by category</h1>
                 <div className="card bg-base-100 shadow-sm">
                     <figure>
                         <Image src={news?.thumbnail_url} alt={news.title} width={300} height={300} className="w-full h-125 object-cover object-[center_20%] rounded-3xl p-5" loading="lazy"></Image>

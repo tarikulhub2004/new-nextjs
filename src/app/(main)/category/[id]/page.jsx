@@ -3,6 +3,9 @@ import LeftSideBar from '@/components/homepage/news/LeftSideBar';
 import RightSideBar from '@/components/homepage/news/RightSideBar';
 import { getCategories, getNewsByCategoryId } from '@/lib/data/data';
 
+export const metadata = {
+    title: 'News Page',
+}
 
 const NewsCategoryPage = async ({ params }) => {
     const { id } = await params;
@@ -26,10 +29,10 @@ const NewsCategoryPage = async ({ params }) => {
 
                 {/* middle */}
                 <div className="text-xl font-bold col-span-6">
-                   
+                    <p>News by category</p>
                     <div className="space-y-4 mt-5">
                         {
-                            news.length > 0 ? news.map((n,index) => {
+                            news.length > 0 ? news.map((n, index) => {
                                 return <HomeNewsBar key={index} news={n}>
                                 </HomeNewsBar>
                             }) : <h1 className='text-center'>No News Found</h1>
