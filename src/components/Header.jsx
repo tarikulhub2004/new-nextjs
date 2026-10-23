@@ -2,6 +2,7 @@ import logo from '@/assets/logo.png'
 import Image from 'next/image';
 // import logo from '../assets/logo.png'
 import { format } from "date-fns";
+import BrakingNews from './shared/BrakingNews';
 
 
 const Header = () => {
@@ -10,6 +11,7 @@ const Header = () => {
             <Image className='mx-auto mt-10' src={logo} width={300} height={200} alt='Logo'></Image>
             <p className='text-l text-gray-500'>Journalism Without Fear or Favour</p>
             <p>{format(new Date(), "EEE, MMM dd, yyyy")}</p>
+            <BrakingNews></BrakingNews>
         </div>
     );
 };

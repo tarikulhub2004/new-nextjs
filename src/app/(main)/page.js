@@ -1,7 +1,10 @@
-import Image from "next/image";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+
+export default async function Home() {
+
+
   return (
-  <h1 className="text-2xl text-center">This is Home page</h1>
+    redirect('/category/0')
   );
 }
