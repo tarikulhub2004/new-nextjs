@@ -1,12 +1,13 @@
-import Link from "next/link";
+// import Link from "next/link";
 import usersLogo from "../assets/user.png"
 import Image from "next/image";
 import NavLink from "./shared/NavLink";
+import Link from "next/link";
 
 const Navbar = () => {
     return (
         <div className="flex justify-between container mx-auto my-4">
-            <div className=""></div>
+            <div className="w-30"></div>
 
             <div className="flex gap-3 text-gray-500">
                 <button><NavLink href={"/"}>Home</NavLink></button>
@@ -16,7 +17,7 @@ const Navbar = () => {
             
             <div className="flex gap-3">
                 <Image src={usersLogo} alt="User logo"></Image>
-                <button className="btn bg-gray-700 text-white px-8">Login</button>
+                <Link href='/login'><button className="btn bg-gray-700 text-white px-8">Login</button></Link>
             </div>
         </div>
     );

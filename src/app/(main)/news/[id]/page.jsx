@@ -8,7 +8,7 @@ export const generateMetadata = async ({ params }) => {
     const { id } = await params;
     // console.log("params", params);
     const news = await getNewsDetails(id);
-    // console.log(id, "id");
+    // console.log(idj, "id");
 
     return {
         title: news.title,
