@@ -26,7 +26,7 @@ const Login = () => {
         // console.log(res, error)
 
         if (res) {
-            alert("success")
+            alert("Login Successful")
         }
         else if (error) {
             alert(error.message)

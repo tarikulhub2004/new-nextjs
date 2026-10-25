@@ -26,15 +26,26 @@ const RightSideBar = () => {
         // console.log(data,"data")
     }
 
-    return (
-        <div>
-            Login with
+    const { data: session } = authClient.useSession()
 
-            <div className="flex flex-col gap-3 my-5">
-                <button onClick={handleGoogleLogin} className="btn text-blue-400 font-normal border-blue-400"><FaGoogle /> Login with Google</button>
-                <button onClick={handleGithubLogin} className="btn text-gray-700 font-normal border-gray-700"><FaGithub /> Login with Github</button>
-            </div>
-            <h1>Find Us On</h1>
+
+    return (
+        <div className="">
+
+            {
+                !session &&
+                <div className="">
+                    <h2> Login with</h2>
+
+                    <div className="flex flex-col gap-3 m-5">
+                        <button onClick={handleGoogleLogin} className="btn text-blue-400 font-normal border-blue-400"><FaGoogle /> Login with Google</button>
+                        <button onClick={handleGithubLogin} className="btn text-gray-700 font-normal border-gray-700"><FaGithub /> Login with Github</button>
+                    </div>
+                </div>
+
+            }
+
+            <h1 className="mb-3">Find Us On</h1>
 
             <div className="text-lg font-normal text-gray-600">
                 <div className="flex items-center gap-2 p-4 border border-gray-300 rounded-t-md">

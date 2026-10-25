@@ -31,7 +31,7 @@ const Navbar = () => {
 
             {
                 isPending ? (
-                    "Loading..."
+                    <span className="loading loading-bars loading-md"></span>
                 ) : session ? (
                     <div className="flex gap-3">
                         <h2 className="mt-2">Hello, {user?.name}</h2>
