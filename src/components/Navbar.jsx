@@ -20,7 +20,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="flex justify-between container mx-auto my-4">
+        <div className="flex flex-col md:flex-row w-full items-end gap-3 md:justify-between container mx-auto my-4">
             <div className="w-30"></div>
 
             <div className="flex gap-3 text-gray-500">
